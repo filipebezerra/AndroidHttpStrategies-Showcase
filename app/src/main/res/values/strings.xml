@@ -12,4 +12,12 @@
     <string name="item_gson">Gson</string>
     <string name="item_jackson">Jackson</string>
     <string name="item_logan_square">Logan Square</string>
+    <string name="searching_please_wait">Please wait while we search results…</string>
+    <string name="metrics_explanation">
+        Call duration(sec.): %1$d
+        \nHttp strategy: %2$s
+        \nJSON converter: %3$s
+        \nResult count: %4$d
+    </string>
+    <string name="metrics">Metrics</string>
 </resources>

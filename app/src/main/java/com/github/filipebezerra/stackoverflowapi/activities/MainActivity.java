@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity
     private void showProgressDialog() {
         if (mProgressDialog == null || !mProgressDialog.isShowing()) {
             mProgressDialog = new MaterialDialog.Builder(MainActivity.this).
-                    content("Aguarde enquanto buscamos resultados...").
+                    content(R.string.searching_please_wait).
                     progress(true, 0).
                     show();
         }
@@ -228,13 +228,12 @@ public class MainActivity extends AppCompatActivity
         mQuestionsAdapter.swapData(result);
         saveSearch();
 
-        final String content = "Call duration(sec.): " + TimeUnit.MILLISECONDS.toSeconds(finalTime) +
-                "\nHttp strategy: " + getHttpStrategyName() +
-                "\nJSON converter: " + getJsonConverterName() +
-                "\nResult count: " + String.valueOf(result.size());
+        final long duration = TimeUnit.MILLISECONDS.toSeconds(finalTime);
+        final String content = String.format(getString(R.string.metrics_explanation),
+                duration, getHttpStrategyName(), getJsonConverterName(), result.size());
 
         new MaterialDialog.Builder(this).
-                title("Metrics").
+                title(R.string.metrics).
                 content(content).
                 show();
 
