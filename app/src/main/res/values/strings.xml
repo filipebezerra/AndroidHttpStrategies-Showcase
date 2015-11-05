@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">StackOverflow Questions</string>
+    <string name="action_search">Search</string>
+    <string name="search_label">StackOverflow Questions</string>
+    <string name="search_hint">Search questions</string>
+    <string name="action_strategy">Strategy</string>
+    <string name="action_converter">Converter</string>
+    <string name="item_asynctask">ASyncTask</string>
+    <string name="item_volley">Volley</string>
+    <string name="item_aquery">AQuery</string>
+    <string name="item_retrofit">Retrofit</string>
+    <string name="item_gson">Gson</string>
+    <string name="item_jackson">Jackson</string>
+    <string name="item_logan_square">Logan Square</string>
+</resources>
