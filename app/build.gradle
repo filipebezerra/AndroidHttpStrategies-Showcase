@@ -23,32 +23,46 @@ android {
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/NOTICE'
     }
+    sourceSets {
+        main {
+            resources.srcDirs = ['src/main/resources', 'src/test/resources/']
+        }
+    }
 }
 
 apply plugin: 'com.neenbedankt.android-apt'
 
 repositories {
     maven { url "https://jitpack.io" }
-    maven { url 'http://oss.sonatype.org/content/repositories/snapshots'}
+    maven { url 'http://oss.sonatype.org/content/repositories/snapshots' }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':volley')
+
     testCompile 'junit:junit:4.12'
+    testCompile 'com.jayway.restassured:rest-assured:2.5.0'
+    testCompile 'com.jayway.restassured:json-path:2.5.0'
+    testCompile('com.jayway.restassured:json-schema-validator:2.5.0') {
+        exclude group: 'com.fasterxml.jackson.core'
+    }
+
     compile 'com.android.support:design:23.1.0'
-    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.android.support:recyclerview-v7:23.1.0'
+
     compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
     compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
     compile 'com.squareup.retrofit:converter-jackson:2.0.0-beta2'
     compile 'com.squareup.okhttp:logging-interceptor:2.6.0-SNAPSHOT'
-    compile 'com.android.support:recyclerview-v7:23.1.0'
-    compile('com.github.afollestad.material-dialogs:core:0.8.5.0@aar') {
-        transitive = true
-    }
-    compile 'org.unbescape:unbescape:1.1.1.RELEASE'
-    compile 'com.googlecode.android-query:android-query:0.25.9'
+    compile 'com.github.aurae.retrofit:converter-logansquare:1.0.0'
+
     apt 'com.bluelinelabs:logansquare-compiler:1.1.0'
     compile 'com.bluelinelabs:logansquare:1.1.0'
-    compile 'com.github.aurae.retrofit:converter-logansquare:1.0.0'
+
+    compile 'com.googlecode.android-query:android-query:0.25.9'
+
+    compile 'org.unbescape:unbescape:1.1.1.RELEASE'
+    compile('com.github.afollestad.material-dialogs:core:0.8.5.0@aar') { transitive = true }
+    compile 'com.jakewharton:butterknife:7.0.1'
 }
