@@ -57,10 +57,12 @@
                 <item
                     android:id="@+id/item_jackson"
                     android:title="@string/item_jackson"
+                    android:enabled="false"
                     />
                 <item
                     android:id="@+id/item_logan_square"
                     android:title="@string/item_logan_square"
+                    android:enabled="false"
                     />
             </group>
         </menu>

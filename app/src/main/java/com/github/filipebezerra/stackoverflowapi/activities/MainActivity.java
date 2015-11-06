@@ -61,6 +61,8 @@ public class MainActivity extends AppCompatActivity
     private long initialTime;
     private long finalTime;
 
+    private Menu mMenu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,6 +125,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
+        mMenu = menu;
         mSearchView = (SearchView) MenuItemCompat.getActionView(
                 menu.findItem(R.id.action_search));
         SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
@@ -135,6 +138,14 @@ public class MainActivity extends AppCompatActivity
         if (item.getGroupId() != 0) {
             if (item.getGroupId() == R.id.group_strategy) {
                 mIdStrategySelected = item.getItemId();
+
+                if (mIdStrategySelected != R.id.item_retrofit &&
+                        mIdConverterSelected != R.id.item_gson) {
+                    mMenu.findItem(mIdConverterSelected).setChecked(false);
+                    mMenu.findItem(R.id.item_gson).setChecked(true);
+                    mIdConverterSelected = R.id.item_gson;
+                    onPrepareOptionsMenu(mMenu);
+                }
             } else {
                 mIdConverterSelected = item.getItemId();
             }
@@ -147,6 +158,14 @@ public class MainActivity extends AppCompatActivity
         } else {
             return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        final boolean isRetrofit = mIdStrategySelected == R.id.item_retrofit;
+        menu.findItem(R.id.item_jackson).setEnabled(isRetrofit);
+        menu.findItem(R.id.item_logan_square).setEnabled(isRetrofit);
+        return super.onPrepareOptionsMenu(menu);
     }
 
     private void showProgressDialog() {
