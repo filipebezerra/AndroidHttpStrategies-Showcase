@@ -36,12 +36,15 @@ External Libraries
 Doing
 -----
 
-* Integration testing for services (with Rest Assured)
+* <->
 
 Todo
 ----
 
 * DI with Dagger 2
+* Unit test with JUnit 4 and Roboletric
+* Instrumentation test with AndroidJUnit4
+* UI test with Appium
  
 License
 -------
