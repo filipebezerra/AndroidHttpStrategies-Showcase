@@ -1,5 +1,4 @@
 # StackOverflow Api
-===================
 
 Android app demo showing how to consume restful services using 4 different strategies: AsyncTask, AQuery, Volley and Retrofit 2.
 
@@ -41,10 +40,12 @@ Doing
 Todo
 ----
 
-* DI with Dagger 2
-* Unit test with JUnit 4 and Roboletric
-* Instrumentation test with AndroidJUnit4
-* UI test with Appium
+* DI with [Dagger 2][18]
+* Unit test with [JUnit 4][14] and [Roboletric][21]
+* Instrumentation test with [AndroidJUnit4][22]
+* UI test with [Appium][19]
+* Continuous deployment with [Travis CI][17]
+* Real time showcase with [Appetize][20]
  
 License
 -------
@@ -87,3 +88,9 @@ SOFTWARE.
 [14]: https://github.com/junit-team/junit
 [15]: https://github.com/jayway/rest-assured
 [16]: http://choosealicense.com/licenses/mit/
+[17]: https://travis-ci.org/
+[18]: https://github.com/google/dagger/
+[19]: http://appium.io/
+[20]: https://appetize.io/
+[21]: https://github.com/robolectric/robolectric
+[22]: https://developer.android.com/intl/pt-br/tools/testing-support-library/index.html
