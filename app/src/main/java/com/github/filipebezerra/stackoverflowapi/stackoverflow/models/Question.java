@@ -1,6 +1,7 @@
 package com.github.filipebezerra.stackoverflowapi.stackoverflow.models;
 
 import com.bluelinelabs.logansquare.annotation.JsonObject;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * .
@@ -10,6 +11,7 @@ import com.bluelinelabs.logansquare.annotation.JsonObject;
  * @since #
  */
 @JsonObject(fieldDetectionPolicy = JsonObject.FieldDetectionPolicy.NONPRIVATE_FIELDS)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Question {
     public String title;
     public String link;

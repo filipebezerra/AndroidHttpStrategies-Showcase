@@ -1,6 +1,7 @@
 package com.github.filipebezerra.stackoverflowapi.stackoverflow.models;
 
 import com.bluelinelabs.logansquare.annotation.JsonObject;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
 
 /**
@@ -11,6 +12,7 @@ import java.util.List;
  * @since #
  */
 @JsonObject(fieldDetectionPolicy = JsonObject.FieldDetectionPolicy.NONPRIVATE_FIELDS)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class StackOverflowQuestions {
     public List<Question> items;
 }
