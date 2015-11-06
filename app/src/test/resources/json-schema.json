@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://jsonschema.net",
+  "title": "StackOverflow Search Schema",
+  "type": "object",
+  "properties": {
+    "items": {
+      "id": "http://jsonschema.net/items",
+      "type": "array",
+      "items": {
+        "id": "http://jsonschema.net/items/0",
+        "type": "object",
+        "properties": {
+          "link": {
+            "id": "http://jsonschema.net/items/0/link",
+            "type": "string"
+          },
+          "title": {
+            "id": "http://jsonschema.net/items/0/title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "link",
+          "title"
+        ]
+      },
+      "required": [
+        "0"
+      ]
+    }
+  },
+  "required": [
+    "items"
+  ]
+}
