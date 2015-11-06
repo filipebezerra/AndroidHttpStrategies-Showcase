@@ -14,10 +14,10 @@
     <string name="item_logan_square">Logan Square</string>
     <string name="searching_please_wait">Please wait while we search results…</string>
     <string name="metrics_explanation">
-        Call duration(sec.): %1$d
-        \nHttp strategy: %2$s
-        \nJSON converter: %3$s
-        \nResult count: %4$d
+        Call duration(%1$s.): %2$d
+        \nHttp strategy: %3$s
+        \nJSON converter: %4$s
+        \nResult count: %5$d
     </string>
     <string name="metrics">Metrics</string>
 </resources>

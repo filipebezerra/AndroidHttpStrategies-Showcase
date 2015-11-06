@@ -247,9 +247,20 @@ public class MainActivity extends AppCompatActivity
         mQuestionsAdapter.swapData(result);
         saveSearch();
 
-        final long duration = TimeUnit.MILLISECONDS.toSeconds(finalTime);
+        boolean inSeconds = true;
+        long duration = TimeUnit.MILLISECONDS.toSeconds(finalTime);
+        if (duration == 0) {
+            inSeconds = false;
+            duration = TimeUnit.MILLISECONDS.toMillis(finalTime);
+        }
+
         final String content = String.format(getString(R.string.metrics_explanation),
-                duration, getHttpStrategyName(), getJsonConverterName(), result.size());
+                (inSeconds? "sec":"ms"),
+                duration,
+                getHttpStrategyName(),
+                getJsonConverterName(),
+                result.size()
+        );
 
         new MaterialDialog.Builder(this).
                 title(R.string.metrics).
