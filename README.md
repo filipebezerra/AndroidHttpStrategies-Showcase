@@ -1,4 +1,4 @@
-# StackOverflow Api
+# AndroidHttpStrategies-Showcase
 
 Android app demo showing how to consume RESTful services using 4 different strategies: AsyncTask, AQuery, Volley and Retrofit 2.
 
